@@ -21,36 +21,46 @@ export default function Ask(){
     async function handleClick() {
         setMessage("");
         setAiRes("loading...");
-        const response = await fetch(`${getUrl()}/api/generate`, {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                model: selectedModel,
-                prompt: message,
-                stream: false
-            })
-        });
-        const json = await response.json();
-        if(response.ok){
-            setAiRes(json.response);
+        try{
+            const response = await fetch(`${getUrl()}/api/generate`, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    model: selectedModel,
+                    prompt: message,
+                    stream: false
+                })
+            });
+            const json = await response.json();
+            if(response.ok){
+                setAiRes(json.response);
+            }
+            else{
+                setAiRes("error");
+            }
         }
-        else{
-            setAiRes("error");
+        catch{
+            setAiRes("Error accessing the server");
         }
     }
 
     async function updateModels() {
-        const response = await fetch(`${getUrl()}/api/tags`);
-        const json = await response.json();
-        if(response.ok){
-            const models = json.models;
-            const selects = models.map((modelObj:any) => (
-                <option value={modelObj.name} key={modelObj.name}>{modelObj.name}</option>
-            ))
-            setModelSelects(selects);
+        try{
+            const response = await fetch(`${getUrl()}/api/tags`);
+            const json = await response.json();
+            if(response.ok){
+                const models = json.models;
+                const selects = models.map((modelObj:any) => (
+                    <option value={modelObj.name} key={modelObj.name}>{modelObj.name}</option>
+                ))
+                setModelSelects(selects);
 
+            }
+        }
+        catch{
+            setModelSelects("");
         }
     }
 
