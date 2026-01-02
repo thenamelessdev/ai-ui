@@ -1,6 +1,7 @@
 import Headers from "./headers"
 import Ping from "./ping";
 import Ask from "./Ask";
+import Url from "./Url";
 
 function App() {
   return(
@@ -8,6 +9,7 @@ function App() {
       <Headers/>
       <Ping/>
       <Ask/>
+      <Url/>
     </>
   );
 }

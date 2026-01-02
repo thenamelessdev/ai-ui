@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Cookies from "js-cookie";
 
 export default function Ask(){
 
@@ -7,13 +8,19 @@ export default function Ask(){
     const [ modelSelects, setModelSelects ] = useState("");
     const [ selectedModel, selectModel ] = useState("");
 
+    function getUrl(){
+        return Cookies.get("url") || "http://localhost:11434";
+    }
+
     const handleChange = (e:any) => {
         message = e.target.value;
     }
 
+    
+
     async function handleClick() {
         setAiRes("loading...");
-        const response = await fetch("http://localhost:11434/api/generate", {
+        const response = await fetch(`${getUrl()}/api/generate`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -34,7 +41,7 @@ export default function Ask(){
     }
 
     async function updateModels() {
-        const response = await fetch("http://localhost:11434/api/tags");
+        const response = await fetch(`${getUrl()}/api/tags`);
         const json = await response.json();
         if(response.ok){
             const models = json.models;
