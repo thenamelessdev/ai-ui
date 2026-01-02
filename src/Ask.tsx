@@ -3,22 +3,23 @@ import Cookies from "js-cookie";
 
 export default function Ask(){
 
-    let message:string;
     const [ aiRes, setAiRes ] = useState("Ask something");
     const [ modelSelects, setModelSelects ] = useState("");
     const [ selectedModel, selectModel ] = useState("");
+    const [ message, setMessage ] = useState("");
 
     function getUrl(){
         return Cookies.get("url") || "http://localhost:11434";
     }
 
     const handleChange = (e:any) => {
-        message = e.target.value;
+        setMessage(e.target.value);
     }
 
     
 
     async function handleClick() {
+        setMessage("");
         setAiRes("loading...");
         const response = await fetch(`${getUrl()}/api/generate`, {
             method: "POST",
@@ -66,7 +67,7 @@ export default function Ask(){
             <button className="btn btn-primary" onClick={updateModels}>Update</button>
             <br /><br />
             <div className="form-floating w-25">
-                <input type="text" id="msgInp" className="form-control" placeholder="message" onChange={handleChange}/>
+                <input type="text" id="msgInp" className="form-control" value={message} placeholder="message" onChange={handleChange}/>
                 <label htmlFor="msgInp">Message</label>
             </div>
             <button className="btn btn-success" onClick={handleClick}>Send</button>
