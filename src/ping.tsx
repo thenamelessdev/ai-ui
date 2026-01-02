@@ -4,12 +4,17 @@ export default function Ping(){
     const [ stat, editStat ] = useState("loading...");
 
     async function ping() {
-        const response = await fetch("http://localhost:11434");
-        if(response.ok){
-            editStat("working");
+        try{
+            const response = await fetch("http://localhost:11434");
+            if(response.ok){
+                editStat("working");
+            }
+            else{
+                editStat("error");
+            }
         }
-        else{
-            editStat("error");
+        catch{
+            editStat("error")
         }
     }
     ping()
