@@ -64,15 +64,15 @@ export default function Ask(){
             <select id="models" onChange={handleModelUpd}><option value="missing" selected>Select a model</option>{modelSelects}</select>
             <br />
             <button className="btn btn-primary" onClick={updateModels}>Update</button>
-            <br />
+            <br /><br />
             <div className="form-floating w-25">
                 <input type="text" id="msgInp" className="form-control" placeholder="message" onChange={handleChange}/>
                 <label htmlFor="msgInp">Message</label>
             </div>
-            <br />
             <button className="btn btn-success" onClick={handleClick}>Send</button>
             <br />
             <div>Response: {aiRes}</div>
+            <br />
         </div>
     )
 }
