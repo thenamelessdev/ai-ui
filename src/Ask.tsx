@@ -72,7 +72,7 @@ export default function Ask(){
     return(
         <div>
             <br />
-            <select id="models" onChange={handleModelUpd}><option value="missing" selected>Select a model</option>{modelSelects}</select>
+            <select id="models" onChange={handleModelUpd} className="form-select" style={{width: "200px"}}><option value="missing" selected>Select a model</option>{modelSelects}</select>
             <br />
             <button className="btn btn-primary" onClick={updateModels}>Update</button>
             <br /><br />
