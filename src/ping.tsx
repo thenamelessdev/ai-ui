@@ -24,10 +24,12 @@ export default function Ping(){
     }
     ping()
 
+    setInterval(() => {
+        ping();
+    }, 5000);
+
     return(
         <div>
-            <p>Ping Ollama server</p>
-            <button className="btn btn-primary" style={{marginTop: "0px"}} onClick={ping}>Ping</button>
             <p>Status: {stat}</p>
         </div>
     );
