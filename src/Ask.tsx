@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Cookies from "js-cookie";
 
 export default function Ask(){
@@ -68,6 +68,9 @@ export default function Ask(){
         selectModel(e.target.value);
     }
 
+    useEffect(() => {
+        updateModels();
+    }, [])
 
     return(
         <div>
