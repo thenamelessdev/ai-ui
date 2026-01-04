@@ -27,25 +27,46 @@ npx vite
 if you did everything correctly it should start the server and give you it's ip
 
 **Usage**
-Make sure that you started the Ollama server
-Press the ping button and if it writes working then everything's fine
+If you see this it might look complicated but it's not.
 
-<img src="./public/ping.png" height="200">
+Categories:
+- Ask: Talk with the AI
+- Edit URL: Edit the Ollama server's url
+- Models: Create and delete models
 
-if it writes error:
+How to use Ask:
 
-<img src="./public/pingerr.png" height="200">
+After you set the correct url and the status writes "working" then you can ask AI a question. Select a model in the model selector (Select a model). If there are no models visible then you have to install one: `ollama pull [model]`
 
-then make sure that the server is running the you have the correct ip address. If the ip is not the default then you can change it at the bottom of the page:
+A popular model is phi3 (A lightweight model by Microsoft). Install it with:
+```
+ollama pull phi3:latest
+```
+After installing and pressing the Update button you should see it show up. Select it type a message and press send. It could take a while depending on your specs, question or AI model.
 
-<img src="./public/change.png" height="200">
+The response should show up in the Response: text. If it writes error then there has beed a error with:
+- Connecting to the server
+- Invalid AI model
+- Not enought ram
 
-and press Ping again
+How to use Edit URL:
 
-To ask ai a question make sure you have at least one model installed and then press Update to update the model list:
+After selecting it you should see the input with the default url in it (http://localhost:11434). By default that's Ollamas local server. You should only edit it in case:
+- You changes the port
+- It's not running on your computer
 
-<img src="./public/update.png" height="200">
+Make sure to format it correctly:
+- starts with http:// (if local)
 
-If you have models installed then you should see them in the dropdown menu and select it
-After you selected it you can write the message in the Messafe input under the update button.
-After you wrote your message press send to send it. After the model finished (it might take a while) you should see the response at the Response text
+How to use Models:
+
+After clicking it there should be 2 buttons.
+
+Create model: Creates a custom model. Requires a model to be already installed
+Name: the model's name
+Model: the model your model should be based off
+Description: The model's description. (Example: You are a helpful ai assistant)
+
+Delete model: Deletes a installed/custom model. WARNING: this will permanantly delete your model from the server
+
+Model: The model you want to delete
