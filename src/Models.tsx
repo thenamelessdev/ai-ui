@@ -70,7 +70,7 @@ export default function Models(){
 
 
     return(
-        <div><br /><br />
+        <div>
             <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modelModal" onClick={updateModels}>
             Create Model
             </button>
