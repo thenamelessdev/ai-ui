@@ -11,7 +11,7 @@ export default function Url(){
     
     return(
         <div>
-            <input className="form-control" type="text" value={url} onChange={handleChange} />
+            <input className="form-control w-25" type="text" value={url} onChange={handleChange} />
         </div>
     );
 }
