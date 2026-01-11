@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 114.04 109.55">
+  <defs>
+    <style>
+      .cls-1 {
+        font-size: 100px;
+      }
+
+      .cls-1, .cls-2, .cls-3, .cls-4 {
+        font-family: MyriadPro-Regular, 'Myriad Pro';
+      }
+
+      .cls-2 {
+        font-size: 51.1px;
+      }
+
+      .cls-3 {
+        font-size: 53.39px;
+      }
+
+      .cls-4 {
+        font-size: 41.24px;
+      }
+    </style>
+  </defs>
+  <text class="cls-1" transform="translate(0 83.7)"><tspan x="0" y="0">&gt;_</tspan></text>
+  <text class="cls-4" transform="translate(73.54 91.51) scale(.88 1)"><tspan x="0" y="0">A</tspan></text>
+  <text class="cls-3" transform="translate(66.13 96.2) scale(1.06 1)"><tspan x="0" y="0">U</tspan></text>
+  <text class="cls-2" transform="translate(80.29 93.96) scale(.71 1)"><tspan x="0" y="0">I</tspan></text>
+</svg>
